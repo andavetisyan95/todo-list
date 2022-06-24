@@ -9,17 +9,18 @@ export default function TodoInput() {
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState([]);
 
-  const addToDo = (todos) => {
-    if (todos !== "") {
+  const addToDo = (actions) => {
+    if (actions !== "") {
       const newTodo = {
         id: Math.random(),
-        text: todos,
+        text: actions,
         completed: false,
       };
       setTodoList([...todoList, newTodo]);
     } else {
       alert("Wrong text");
     }
+
     setTodo("");
   };
 
@@ -27,7 +28,7 @@ export default function TodoInput() {
     setTodoList([...todoList.filter((todo) => todo.id !== id)]);
   };
 
-  const onChange = (newTodo) => {
+  const handleChange = (newTodo) => {
     return setTodoList(
       todoList.map((elem) => {
         if (elem.id === newTodo.id) {
@@ -59,7 +60,7 @@ export default function TodoInput() {
                 key={todo.id}
                 todo={todo}
                 removeTodo={removeTodo}
-                onChange={onChange}
+                handleChange={handleChange}
               />
             );
           })}

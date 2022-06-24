@@ -2,7 +2,7 @@ import React, { useState } from "react";
 //styles
 import "../styles/TodoInput.scss";
 
-export default function TodoBox({ todo, removeTodo, onChange }) {
+export default function TodoBox({ todo, removeTodo, handleChange }) {
   return (
     <label className="main_todos_comp_label">
       <input
@@ -10,7 +10,7 @@ export default function TodoBox({ todo, removeTodo, onChange }) {
         className="main_todos_comp_label_inp"
         checked={todo.completed}
         onChange={(e) =>
-          onChange({
+          handleChange({
             ...todo,
             completed: e.target.checked,
           })
