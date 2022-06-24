@@ -63,22 +63,30 @@
         align-items: center;
         border: 2px solid rgb(224, 172, 104);
         background-color: bisque;
-        height: 30px;
+        height: auto;
         &_inp {
           width: 20px;
           height: 20px;
           cursor: pointer;
         }
-        &_div {
-          margin-left: -250px;
+        &_input {
+          margin-left: -30px;
           font-weight: 500;
           border: none;
           background-color: bisque;
           cursor: pointer;
-          font-size: 18px;
+          font-size: 17px;
+        }
+        &_pTag {
+          font-weight: 500;
+          margin-left: 10px;
+          font-size: 17px;
+          width: 300px;
         }
         &_btn {
-          margin-right: 20px;
+          margin-right: 10px;
+          display: flex;
+          gap: 8px;
           & > button {
             background-color: white;
             border: 3px solid rgb(224, 172, 104);

@@ -18,7 +18,7 @@ export default function TodoInput() {
       };
       setTodoList([...todoList, newTodo]);
     } else {
-      alert("Wrong text");
+      alert("Your input is empty!");
     }
 
     setTodo("");
@@ -28,7 +28,7 @@ export default function TodoInput() {
     setTodoList([...todoList.filter((todo) => todo.id !== id)]);
   };
 
-  const handleChange = (newTodo) => {
+  const handleCheck = (newTodo) => {
     return setTodoList(
       todoList.map((elem) => {
         if (elem.id === newTodo.id) {
@@ -38,11 +38,27 @@ export default function TodoInput() {
       })
     );
   };
+  const editInputValue = (newValue) => {
+    return setTodoList(
+      todoList.map((elem) => {
+        if (elem.id === newValue.id) {
+          return newValue;
+        }
+        return elem;
+      })
+    );
+  };
   return (
     <div className="main">
       <div className="main_div">
         <input
-          onChange={(e) => setTodo(e.target.value)}
+          onChange={(e) =>
+            e.target.value.length >= 35
+              ? alert(
+                  "Your text size is more than 30 characters. Please shorten your text!"
+                )
+              : setTodo(e.target.value)
+          }
           className="main_div_input"
           type="text"
           placeholder="What you have to do?"
@@ -60,7 +76,8 @@ export default function TodoInput() {
                 key={todo.id}
                 todo={todo}
                 removeTodo={removeTodo}
-                handleChange={handleChange}
+                handleCheck={handleCheck}
+                editInputValue={editInputValue}
               />
             );
           })}
