@@ -1,0 +1,92 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    top: 15%;
+    gap: 25px;
+    &_input {
+      width: 400px;
+      height: 25px;
+      color: black;
+      font-weight: 700;
+      border: 3px solid bisque;
+      border-radius: 10px 0 10px 0;
+      padding: 5px;
+      &:hover {
+        background-color: bisque;
+        border: 3px solid rgb(224, 172, 104);
+      }
+    }
+    &_btn {
+      width: 70px;
+      background-color: white;
+      border: 3px solid bisque;
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 0 10px 0 10px;
+      &:hover {
+        background-color: bisque;
+        border: 3px solid rgb(224, 172, 104);
+      }
+    }
+  }
+  &_todos {
+    width: 510px;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    top: 25%;
+    &_comp {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      &_done {
+        position: absolute;
+        right: 10px;
+        bottom: -40px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      &_label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid rgb(224, 172, 104);
+        background-color: bisque;
+        height: 30px;
+        &_inp {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+        &_div {
+          margin-left: -250px;
+          font-weight: 500;
+          border: none;
+          background-color: bisque;
+          cursor: pointer;
+          font-size: 18px;
+        }
+        &_btn {
+          margin-right: 20px;
+          & > button {
+            background-color: white;
+            border: 3px solid rgb(224, 172, 104);
+            font-weight: 600;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
