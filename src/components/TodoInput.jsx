@@ -61,7 +61,7 @@ export default function TodoInput() {
           }
           className="main_div_input"
           type="text"
-          placeholder="What you have to do?"
+          placeholder="What you have to done?"
           value={todo}
         />
         <button onClick={() => addToDo(todo)} className="main_div_btn">
